@@ -1,0 +1,29 @@
+<!-- Dividimos o html em partes (esta na pasta partial)-->
+<!-- com isso definimos um modulo para cada parte e depois só importamos aqui com o codigo abaixo-->
+<%- include('partials/header.ejs') %>
+
+    <body>
+        <%- include('partials/navbar.ejs') %>
+            <div class="container">
+                <div class="card" id="FRMpergunta">
+                    <div class="card-header">
+                        <h3>Fazer pergunta</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <form method="POST" action="/salvarpergunta">
+                            <label>Titulo</label>
+                            <input type="text" placeholder="Coloque o titulo." class="form-control" name="titulo">
+                            <br>
+                            <label>Descrição</label>
+                            <textarea placeholder="Seja claro ao descrever sua pergunta."class="form-control" name="descricao"></textarea>                                
+                            <br>
+                            <button type="submit" class="btn btn-primary">Enviar pergunta 💬</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+    </body>
+
+    <%- include('partials/footer.ejs') %>
